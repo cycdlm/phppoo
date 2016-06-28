@@ -23,16 +23,12 @@
                 return $this->position;
             }
             
-            public function resetPosition() {
-                $this->innerFunction();
-                $this->moveTo(0,0);
+        
                 
-                return $this->position;
+           
             }
-            protected function innerFunction() {
-                echo "innerFunction";
-            }
-        }
+          
+        
         
         $pet=new cat("");
         
