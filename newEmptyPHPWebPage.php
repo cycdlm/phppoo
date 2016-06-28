@@ -9,13 +9,23 @@
         
         class cat
         {
-            public $name;
+            protected $name;
             protected $position;
             
             public function __construct($name) {
                 $this->name = $name;
                 $this->position = ['x'=>0,'y'=>0];
-            }          
+            }    
+            
+             public function getName()
+            {
+               return $this->name ; 
+            } 
+            
+            public function setName($name)
+            {
+                $this->name = $name; 
+            }
             public function moveTo($x,$y) {
                 $this->position['x']=$x;
                 $this->position['y']=$y;
@@ -23,12 +33,19 @@
                 return $this->position;
             }
             
-            public function resetPosition() {
-                $this->innerFunction();
-                $this->moveTo(0,0);
+             public function move($x,$y) {
+                $this->position['x']+=$x;
+                $this->position['y']+=$y;
                 
                 return $this->position;
             }
+            
+//            public function resetPosition() {
+//                $this->innerFunction();
+//                $this->moveTo(0,0);
+//                
+//                return $this->position;
+//            }
             protected function innerFunction() {
                 echo "innerFunction";
             }
@@ -46,9 +63,13 @@
          echo "(".$movePosition['x']." , ".$movePosition['y'].")";
          echo "<br>";
          
-          $movePosition= $pet->resetPosition();
+            $movePosition= $pet->moveTo(3, 5);
          echo "(".$movePosition['x']." , ".$movePosition['y'].")";
          echo "<br>";
+         
+//          $movePosition= $pet->resetPosition();
+//         echo "(".$movePosition['x']." , ".$movePosition['y'].")";
+//         echo "<br>";
         ?>  
     </body>
 </html>
