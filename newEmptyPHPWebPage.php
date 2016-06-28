@@ -51,12 +51,12 @@
             }
         }
         
-        $pet=new cat("");
+        $pet=new cat("kitty");
         
-        echo $pet->name;
+//        echo $pet->name;
         echo "<br>";
-        $pet->name = "hello kitty";
-        echo $pet->name;
+//        $pet->name = "hello kitty";
+        echo $pet->getName();
         echo "<br>";
         
         $movePosition= $pet->moveTo(3, 5);
