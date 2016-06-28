@@ -63,7 +63,7 @@
          echo "(".$movePosition['x']." , ".$movePosition['y'].")";
          echo "<br>";
          
-            $movePosition= $pet->moveTo(3, 5);
+            $movePosition= $pet->move(2, 2);
          echo "(".$movePosition['x']." , ".$movePosition['y'].")";
          echo "<br>";
          
